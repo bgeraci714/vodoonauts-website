@@ -1,11 +1,5 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.com">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Voodoonauts Website building using Gatsby's default starter
+<h1>
+  Voodoonauts Website built using Gatsby's default starter
 </h1>
 
 Voodoonauts twitter: [@voodoonauts](https://twitter.com/voodoonauts?lang=en)
