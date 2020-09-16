@@ -1,39 +1,64 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import BurgerMenu from "./nav/BurgerMenu"
 
-const Header = ({ siteTitle, headingColor }) => (
-  <header
-    style={{
-      background: `${headingColor}`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+const headerStyles = headingColor => ({
+  display: "grid",
+  gridTemplateAreas: "logo nav",
+  background: `${headingColor}`,
+  marginBottom: `1.45rem`,
+  position: "fixed",
+  zIndex: "10000",
+  width: "100%",
+})
+
+const Header = ({ siteTitle, headingColor, handleMenuStateChange }) => {
+  // const [isSmallScreen, setIsSmallScreen] = useState(false)
+  // const handleMediaQueryChange = mediaQuery =>
+  //   mediaQuery.matches ? setIsSmallScreen(true) : setIsSmallScreen(false)
+
+  // useEffect(() => {
+  //   const mediaQuery = window.matchMedia("(max-width: 900px")
+  //   mediaQuery.addListener(handleMediaQueryChange)
+  //   handleMediaQueryChange(mediaQuery)
+
+  //   return () => {
+  //     mediaQuery.removeListener(handleMediaQueryChange)
+  //   }
+  // }, [])
+
+  return (
+    <header style={headerStyles(headingColor)}>
+      <div
+        style={{
+          margin: `0 auto`,
+          maxWidth: 960,
+          padding: `1.45rem 1.0875rem`,
+        }}
+      >
+        <h1 style={{ margin: 0 }}>
+          <Link
+            to="/"
+            style={{
+              color: `white`,
+              textDecoration: `none`,
+            }}
+          >
+            {siteTitle}
+          </Link>
+        </h1>
+      </div>
+
+      <BurgerMenu handleMenuStateChange={handleMenuStateChange} />
+    </header>
+  )
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
   headingcolor: PropTypes.string,
+  handleMenuStateChange: PropTypes.func,
 }
 
 Header.defaultProps = {
