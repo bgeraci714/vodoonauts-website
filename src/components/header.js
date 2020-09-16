@@ -14,20 +14,6 @@ const headerStyles = headingColor => ({
 })
 
 const Header = ({ siteTitle, headingColor, handleMenuStateChange }) => {
-  // const [isSmallScreen, setIsSmallScreen] = useState(false)
-  // const handleMediaQueryChange = mediaQuery =>
-  //   mediaQuery.matches ? setIsSmallScreen(true) : setIsSmallScreen(false)
-
-  // useEffect(() => {
-  //   const mediaQuery = window.matchMedia("(max-width: 900px")
-  //   mediaQuery.addListener(handleMediaQueryChange)
-  //   handleMediaQueryChange(mediaQuery)
-
-  //   return () => {
-  //     mediaQuery.removeListener(handleMediaQueryChange)
-  //   }
-  // }, [])
-
   return (
     <header style={headerStyles(headingColor)}>
       <div
