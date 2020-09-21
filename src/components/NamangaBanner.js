@@ -32,9 +32,9 @@ const textStyling = {
 const Image = () => {
   const data = useStaticQuery(graphql`
     query {
-      image: file(relativePath: { eq: "namanga.png" }) {
+      image: file(relativePath: { eq: "namanga/namanga.png" }) {
         childImageSharp {
-          fluid(maxWidth: 1600) {
+          fluid(maxWidth: 1200) {
             ...GatsbyImageSharpFluid
           }
         }

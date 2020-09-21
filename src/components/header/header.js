@@ -12,6 +12,7 @@ const headerStyles = headingColor => ({
   zIndex: "10000",
   width: "100%",
   borderBottom: "2px solid rgba(109, 33, 79, 0.2)",
+  top: 0,
 })
 
 const Header = ({ siteTitle, headingColor, handleMenuStateChange }) => {

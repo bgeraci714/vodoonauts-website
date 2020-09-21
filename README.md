@@ -9,12 +9,12 @@ Voodoonauts twitter: [@voodoonauts](https://twitter.com/voodoonauts?lang=en)
 - [x] Basic layout
 - [x] Basic Nav (hamburger)
 - [ ] Icons for nav component
-- [ ] Banner/Hero Image Component that allows test over it
-- [ ] Testimonial Component (quote, from section)
+- [x] Banner/Hero Image Component that allows test over it
+- [x] Testimonial Component (quote, from section)
+- [x] Home Page
 - [ ] Profile component (photo, name, about me section (multi-para))
 - [ ] About Us Page
 - [ ] News Page
-- [ ] Home Page
 
 ## 🚀 Quick start
 
