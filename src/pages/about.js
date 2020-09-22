@@ -162,28 +162,28 @@ export const query = graphql`
   {
     shingai: file(relativePath: { eq: "founders/Shingai_Headshot2.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 1200) {
+        fluid(maxWidth: 600) {
           ...GatsbyImageSharpFluid
         }
       }
     }
     yvette: file(relativePath: { eq: "founders/Yvette_HeadshotWF.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 1200) {
+        fluid(maxWidth: 600) {
           ...GatsbyImageSharpFluid
         }
       }
     }
     lp: file(relativePath: { eq: "founders/LP_Headshot.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 1200) {
+        fluid(maxWidth: 600) {
           ...GatsbyImageSharpFluid
         }
       }
     }
     hugh: file(relativePath: { eq: "founders/Hugh_Headshot.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 1200) {
+        fluid(maxWidth: 600) {
           ...GatsbyImageSharpFluid
         }
       }

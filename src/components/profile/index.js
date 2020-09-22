@@ -30,22 +30,25 @@ const ImgContainer = styled.div`
   margin: 0 1rem 1rem 1rem;
 `
 
-const Excerpt = styled.p`
+const Excerpt = styled.span`
   width: 100%;
   margin: auto;
 `
 
 const Profile = ({ name, avatar, excerpt }) => (
-  <>
+  <div id={name}>
     <Name>{name}</Name>
-    <HorizontalLine></HorizontalLine>
+    <HorizontalLine />
     <FlexContainer>
-      <ImgContainer>
-        <Img fluid={avatar} />
-      </ImgContainer>
+      {avatar && (
+        <ImgContainer>
+          <Img fluid={avatar} />
+        </ImgContainer>
+      )}
+
       <Excerpt>{excerpt}</Excerpt>
     </FlexContainer>
-  </>
+  </div>
 )
 
 export default Profile

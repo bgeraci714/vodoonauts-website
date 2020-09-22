@@ -71,6 +71,10 @@
   &:hover {
     color: #ffd1ce;
   }
+  border-bottom: 1px solid white;
+  &:last-child {
+    border-bottom: none;
+  }
 }
 
 /* Styling of overlay */
