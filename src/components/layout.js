@@ -39,7 +39,7 @@ const Layout = ({ children }) => {
           margin: `3em auto`,
           right: 0, // necessary to maintain div size
           left: 0, // necessary to maintain div size
-          maxWidth: "1200px",
+          maxWidth: "900px",
           padding: `3.5rem 1.0875rem 1.45rem`,
           position: `${isMenuOpen ? "fixed" : "relative"}`,
           height: "100%",

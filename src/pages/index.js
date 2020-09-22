@@ -23,6 +23,7 @@ const testimonials = [
         <a
           href="https://podcasts.apple.com/us/podcast/black-is-king/id1478524025?i=1000486950944?i=1000486950944"
           target="_blank"
+          rel="noreferrer"
         >
           {" "}
           Creatively Exposed podcast
@@ -72,7 +73,7 @@ const IndexPage = () => (
       <NamangaBanner />
     </div>
     <br />
-    <h2 style={{ color: ` #6d214f` }}> Testimonials </h2>
+    <h1 style={{ color: ` #6d214f` }}> Testimonials </h1>
     {testimonials.map(q => (
       <Testimonial quote={q.quote} speaker={q.speaker} />
     ))}
