@@ -18,7 +18,7 @@ const AboutPage = ({ data }) => {
   const profiles = [
     {
       name: "Shingai Njeri Kagunda",
-      avatar: data.shingai.childImageSharp.fluid,
+      avatar: data?.shingai?.childImageSharp?.fluid,
       excerpt: (
         <span>
           <p>
@@ -46,7 +46,7 @@ const AboutPage = ({ data }) => {
     },
     {
       name: "Yvette Lisa Ndlovu",
-      avatar: data.yvette.childImageSharp.fluid,
+      avatar: data?.yvette?.childImageSharp?.fluid,
       excerpt: (
         <span>
           <p>
@@ -75,7 +75,7 @@ const AboutPage = ({ data }) => {
     },
     {
       name: "LP Kindred",
-      avatar: data.lp.childImageSharp.fluid,
+      avatar: data?.lp?.childImageSharp?.fluid,
       excerpt: (
         <span>
           <p>
@@ -97,7 +97,7 @@ const AboutPage = ({ data }) => {
     },
     {
       name: "Hugh “H.D” Hunter",
-      avatar: data.hugh.childImageSharp.fluid,
+      avatar: data?.hugh?.childImageSharp?.fluid,
       excerpt: (
         <span>
           <p>
