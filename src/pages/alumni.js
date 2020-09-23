@@ -1,18 +1,10 @@
-import React from "react"
-import styled from "styled-components"
-import { graphql } from "gatsby"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Profile from "../components/profile"
-
-const Section = styled.div`
-  margin-bottom: 4rem;
-`
-
-const Heading = styled.h1`
-  color: #6d214f;
-  text-align: center;
-`
+import React from "react";
+import { graphql } from "gatsby";
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import Profile from "../components/profile";
+import ZoomBanner from "../components/ZoomBanner";
+import { Heading1, Section } from "../components/common";
 
 const AlumniPage = ({ data }) => {
   const profiles = [
@@ -427,25 +419,35 @@ const AlumniPage = ({ data }) => {
       avatar: null,
       excerpt: <span></span>,
     },
-  ]
+  ];
   return (
     <Layout>
       <SEO title="Alumni" />
-      <Heading>Alumni</Heading>
-      {profiles.map(p => (
-        <Section>
-          <Profile name={p.name} avatar={p.avatar} excerpt={p.excerpt} />
-        </Section>
-      ))}
+      <div style={{ maxWidth: `100%`, marginBottom: `1.45rem` }}>
+        <ZoomBanner />
+      </div>
+      <br />
+      <Heading1>Alumni</Heading1>
+      {profiles
+        .sort((a, b) =>
+          a?.name?.toLowerCase().localeCompare(b?.name?.toLowerCase())
+        )
+        .map(({ name, avatar, excerpt }) => (
+          <Section key={name}>
+            <Profile name={name} avatar={avatar} excerpt={excerpt} />
+          </Section>
+        ))}
     </Layout>
-  )
-}
+  );
+};
 
-export default AlumniPage
+export default AlumniPage;
 
 export const query = graphql`
   {
-    audreyw: file(relativePath: { eq: "alumni/AudreyWilliams_Headshot.jpg" }) {
+    audreyw: file(
+      relativePath: { eq: "images/alumni/AudreyWilliams_Headshot.jpg" }
+    ) {
       childImageSharp {
         fluid(maxWidth: 600) {
           ...GatsbyImageSharpFluid
@@ -453,7 +455,7 @@ export const query = graphql`
       }
     }
     emmaliah: file(
-      relativePath: { eq: "alumni/EmmaliaHarrington_Headshot.jpg" }
+      relativePath: { eq: "images/alumni/EmmaliaHarrington_Headshot.jpg" }
     ) {
       childImageSharp {
         fluid(maxWidth: 600) {
@@ -461,7 +463,7 @@ export const query = graphql`
         }
       }
     }
-    mayab: file(relativePath: { eq: "alumni/MayaBeck_Headshot.jpg" }) {
+    mayab: file(relativePath: { eq: "images/alumni/MayaBeck_Headshot.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 600) {
           ...GatsbyImageSharpFluid
@@ -469,7 +471,7 @@ export const query = graphql`
       }
     }
     pattyj: file(
-      relativePath: { eq: "alumni/PattyNicoleJohnson-Headshot.jpg" }
+      relativePath: { eq: "images/alumni/PattyNicoleJohnson-Headshot.jpg" }
     ) {
       childImageSharp {
         fluid(maxWidth: 600) {
@@ -477,7 +479,7 @@ export const query = graphql`
         }
       }
     }
-    sijuf: file(relativePath: { eq: "alumni/SijuWade_Headshot.jpeg" }) {
+    sijuf: file(relativePath: { eq: "images/alumni/SijuWade_Headshot.jpeg" }) {
       childImageSharp {
         fluid(maxWidth: 600) {
           ...GatsbyImageSharpFluid
@@ -485,7 +487,7 @@ export const query = graphql`
       }
     }
     berttilak: file(
-      relativePath: { eq: "alumni/Berttila_Kithia_Headshot.jpg" }
+      relativePath: { eq: "images/alumni/Berttila_Kithia_Headshot.jpg" }
     ) {
       childImageSharp {
         fluid(maxWidth: 600) {
@@ -493,7 +495,7 @@ export const query = graphql`
         }
       }
     }
-    jasminew: file(relativePath: { eq: "alumni/JasmineWade.jpg" }) {
+    jasminew: file(relativePath: { eq: "images/alumni/JasmineWade.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 600) {
           ...GatsbyImageSharpFluid
@@ -501,7 +503,7 @@ export const query = graphql`
       }
     }
     mubangak: file(
-      relativePath: { eq: "alumni/MubangaKalimamukwentoHeadshot.jpg" }
+      relativePath: { eq: "images/alumni/MubangaKalimamukwentoHeadshot.jpg" }
     ) {
       childImageSharp {
         fluid(maxWidth: 600) {
@@ -510,7 +512,7 @@ export const query = graphql`
       }
     }
     raesheller: file(
-      relativePath: { eq: "alumni/Raeshelle_Rose_Headshot.png" }
+      relativePath: { eq: "images/alumni/Raeshelle_Rose_Headshot.png" }
     ) {
       childImageSharp {
         fluid(maxWidth: 600) {
@@ -518,14 +520,16 @@ export const query = graphql`
         }
       }
     }
-    tinab: file(relativePath: { eq: "alumni/Tina_Jenkins_Bell.jpg" }) {
+    tinab: file(relativePath: { eq: "images/alumni/Tina_Jenkins_Bell.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 600) {
           ...GatsbyImageSharpFluid
         }
       }
     }
-    ebonid: file(relativePath: { eq: "alumni/EboniDunbar_Headshot.jpg" }) {
+    ebonid: file(
+      relativePath: { eq: "images/alumni/EboniDunbar_Headshot.jpg" }
+    ) {
       childImageSharp {
         fluid(maxWidth: 600) {
           ...GatsbyImageSharpFluid
@@ -533,7 +537,7 @@ export const query = graphql`
       }
     }
     katlehor: file(
-      relativePath: { eq: "alumni/KatlehoRamafalo_Headshot.jpeg" }
+      relativePath: { eq: "images/alumni/KatlehoRamafalo_Headshot.jpeg" }
     ) {
       childImageSharp {
         fluid(maxWidth: 600) {
@@ -541,7 +545,7 @@ export const query = graphql`
         }
       }
     }
-    naomid: file(relativePath: { eq: "alumni/Naomi_Day_headshot.jpg" }) {
+    naomid: file(relativePath: { eq: "images/alumni/Naomi_Day_headshot.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 600) {
           ...GatsbyImageSharpFluid
@@ -549,7 +553,7 @@ export const query = graphql`
       }
     }
     rutendoc: file(
-      relativePath: { eq: "alumni/RutendoChidzodzo_headshot.jpg" }
+      relativePath: { eq: "images/alumni/RutendoChidzodzo_headshot.jpg" }
     ) {
       childImageSharp {
         fluid(maxWidth: 600) {
@@ -558,7 +562,7 @@ export const query = graphql`
       }
     }
     wanguik: file(
-      relativePath: { eq: "alumni/Wangũi_wa_Kamonji_Headshot.JPG" }
+      relativePath: { eq: "images/alumni/Wangũi_wa_Kamonji_Headshot.JPG" }
     ) {
       childImageSharp {
         fluid(maxWidth: 600) {
@@ -566,28 +570,30 @@ export const query = graphql`
         }
       }
     }
-    elainem: file(relativePath: { eq: "alumni/Elaine_Musiwa_Headshot.png" }) {
+    elainem: file(
+      relativePath: { eq: "images/alumni/Elaine_Musiwa_Headshot.png" }
+    ) {
       childImageSharp {
         fluid(maxWidth: 600) {
           ...GatsbyImageSharpFluid
         }
       }
     }
-    lyszf: file(relativePath: { eq: "alumni/Lysz_Flo_Headshot.jpg" }) {
+    lyszf: file(relativePath: { eq: "images/alumni/Lysz_Flo_Headshot.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 600) {
           ...GatsbyImageSharpFluid
         }
       }
     }
-    olutolao: file(relativePath: { eq: "alumni/Olutola_Owolabi.png" }) {
+    olutolao: file(relativePath: { eq: "images/alumni/Olutola_Owolabi.png" }) {
       childImageSharp {
         fluid(maxWidth: 600) {
           ...GatsbyImageSharpFluid
         }
       }
     }
-    seana: file(relativePath: { eq: "alumni/SeanAvery_Headshot.jpg" }) {
+    seana: file(relativePath: { eq: "images/alumni/SeanAvery_Headshot.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 600) {
           ...GatsbyImageSharpFluid
@@ -595,4 +601,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

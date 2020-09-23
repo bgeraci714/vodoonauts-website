@@ -15,7 +15,7 @@ Voodoonauts twitter: [@voodoonauts](https://twitter.com/voodoonauts?lang=en)
 - [x] Profile component (photo, name, about me section (multi-para))
 - [x] About Us Page
 - [x] Alumni Page
-- [ ] News Page
+- [x] News Page
 
 ## 🚀 Quick start
 

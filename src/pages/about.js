@@ -1,18 +1,9 @@
-import React from "react"
-import styled from "styled-components"
-import { graphql } from "gatsby"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Profile from "../components/profile"
-
-const Section = styled.div`
-  margin-bottom: 4rem;
-`
-
-const Heading = styled.h1`
-  color: #6d214f;
-  text-align: center;
-`
+import React from "react";
+import { graphql } from "gatsby";
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import Profile from "../components/profile";
+import { Heading1, Section } from "../components/common";
 
 const AboutPage = ({ data }) => {
   const profiles = [
@@ -115,12 +106,12 @@ const AboutPage = ({ data }) => {
         </span>
       ),
     },
-  ]
+  ];
   return (
     <Layout>
       <SEO title="About" />
       <Section>
-        <Heading>Mission</Heading>
+        <Heading1>Mission</Heading1>
         <p>
           Voodoonauts is a grassroots Afrofuturist collective for Black SFF
           writers. Founded by two MFA students, Yvette Lisa Ndlovu and Shingai
@@ -145,43 +136,47 @@ const AboutPage = ({ data }) => {
         </p>
       </Section>
       <Section>
-        <Heading>Founders</Heading>
-        {profiles.map(p => (
-          <Section>
-            <Profile name={p.name} avatar={p.avatar} excerpt={p.excerpt} />
+        <Heading1>Founders</Heading1>
+        {profiles.map(({ name, avatar, excerpt }) => (
+          <Section key={`section_${name}`}>
+            <Profile name={name} avatar={avatar} excerpt={excerpt} />
           </Section>
         ))}
       </Section>
     </Layout>
-  )
-}
+  );
+};
 
-export default AboutPage
+export default AboutPage;
 
 export const query = graphql`
   {
-    shingai: file(relativePath: { eq: "founders/Shingai_Headshot2.jpg" }) {
+    shingai: file(
+      relativePath: { eq: "images/founders/Shingai_Headshot2.jpg" }
+    ) {
       childImageSharp {
         fluid(maxWidth: 600) {
           ...GatsbyImageSharpFluid
         }
       }
     }
-    yvette: file(relativePath: { eq: "founders/Yvette_HeadshotWF.jpg" }) {
+    yvette: file(
+      relativePath: { eq: "images/founders/Yvette_HeadshotWF.jpg" }
+    ) {
       childImageSharp {
         fluid(maxWidth: 600) {
           ...GatsbyImageSharpFluid
         }
       }
     }
-    lp: file(relativePath: { eq: "founders/LP_Headshot.jpg" }) {
+    lp: file(relativePath: { eq: "images/founders/LP_Headshot.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 600) {
           ...GatsbyImageSharpFluid
         }
       }
     }
-    hugh: file(relativePath: { eq: "founders/Hugh_Headshot.jpg" }) {
+    hugh: file(relativePath: { eq: "images/founders/Hugh_Headshot.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 600) {
           ...GatsbyImageSharpFluid
@@ -189,4 +184,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

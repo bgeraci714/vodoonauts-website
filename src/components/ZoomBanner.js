@@ -1,6 +1,7 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
+import styled from "styled-components";
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -17,22 +18,19 @@ const bannerStyling = {
   position: "relative",
 };
 
-const textStyling = {
-  position: "absolute",
-  transform: "translate(-50%,-50%)",
-  top: "70%",
-  left: "50%",
-  textAlign: "center",
-  margin: "0",
-  zIndex: "1",
-  color: "white",
-  width: "80%",
-};
+const ImageText = styled.p`
+  text-align: center;
+  margin-top: 1rem;
+`;
 
 const Image = () => {
   const data = useStaticQuery(graphql`
     query {
-      image: file(relativePath: { eq: "images/namanga/namanga.png" }) {
+      image: file(
+        relativePath: {
+          eq: "images/zoomScreenshots/VoodoonautsUncannyClassPic.png"
+        }
+      ) {
         childImageSharp {
           fluid(maxWidth: 1200) {
             ...GatsbyImageSharpFluid
@@ -44,15 +42,8 @@ const Image = () => {
 
   return (
     <div style={bannerStyling}>
-      {/* <h2 style={textStyling}></h2> */}
-      <span style={textStyling}>
-        <h2>Welcome to our little corner of the galaxy! </h2>
-        <p>
-          Voodonauts is a grassroots Afrofuturist collective promoting
-          connectivity & craft within the global Black SFF community.
-        </p>
-      </span>
       <Img fluid={data.image.childImageSharp.fluid} />
+      <ImageText>Our inaugural class.</ImageText>
     </div>
   );
 };
