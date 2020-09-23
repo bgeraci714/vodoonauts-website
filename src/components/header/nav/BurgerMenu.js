@@ -8,6 +8,7 @@ import {
   faRocket,
   faGraduationCap,
   faNewspaper,
+  faPaperPlane,
 } from "@fortawesome/free-solid-svg-icons";
 
 import Menu from "react-burger-menu/lib/menus/slide";
@@ -54,6 +55,12 @@ const BurgerMenu = ({ handleMenuStateChange }) => (
         <FontAwesomeIcon icon={faGraduationCap} />
       </IconWrapper>
       Alumni
+    </Link>
+    <Link id="contact" className="menu-item" to="/contact">
+      <IconWrapper>
+        <FontAwesomeIcon icon={faPaperPlane} />
+      </IconWrapper>
+      Contact Us
     </Link>
   </Menu>
 );
